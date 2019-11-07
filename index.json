@@ -1,10 +1,46 @@
 [
-  "stellarexpert-update-august-2019",
-  "cap-draft-disable-inflation-mechanism",
-  "how-stable-are-stellar-based-stablecoins",
-  "stellarexpert-update-may-2019",
-  "daily-active-accounts-on-stellar-correct-estimates",
-  "drafting-off-chain-account-metadata-for-stellar-network",
-  "tiny-things-matter-or-detective-novel-featuring-stellar-dex",
-  "stellarexpert-update-november-2018"
+  {
+    "title": "StellarExpert — Updates August 2019",
+    "date": "2019-08-10",
+    "id": "stellarexpert-update-august-2019"
+  },
+  {
+    "title": "CAP Draft | Disable  Inflation Mechanism",
+    "date": "2019-07-11",
+    "id": "cap-draft-disable-inflation-mechanism"
+  },
+  {
+    "title": "How Stable are Stellar-based Stablecoins?",
+    "date": "2019-05-05",
+    "image": "anchorusd-volatility.png",
+    "id": "how-stable-are-stellar-based-stablecoins"
+  },
+  {
+    "title": "StellarExpert — Updates May 2019",
+    "date": "2019-05-05",
+    "id": "stellarexpert-update-may-2019"
+  },
+  {
+    "title": "Daily Active Accounts on Stellar — Correct Estimates",
+    "date": "2019-04-29",
+    "image": "daily-active-accounts-by-stellarexpert.png",
+    "id": "daily-active-accounts-on-stellar-correct-estimates"
+  },
+  {
+    "title": "Drafting Off-Chain Account Metadata for Stellar Network",
+    "date": "2019-04-04",
+    "image": "network.jpg",
+    "id": "drafting-off-chain-account-metadata-for-stellar-network"
+  },
+  {
+    "title": "Tiny Things Matter or Detective Novel Featuring Stellar DEX",
+    "date": "2018-12-20",
+    "image": "clash.jpg",
+    "id": "tiny-things-matter-or-detective-novel-featuring-stellar-dex"
+  },
+  {
+    "title": "StellarExpert — Updates November 2018",
+    "date": "2018-11-29",
+    "id": "stellarexpert-update-november-2018"
+  }
 ]

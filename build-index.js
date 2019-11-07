@@ -32,6 +32,7 @@ function findPosts() {
             if (meta.hidden === 'true') continue
             validateMeta(meta, entry)
             meta.id = entry
+            delete meta.description
             res.push(meta)
         }
     }
@@ -46,9 +47,10 @@ function buildIndex() {
         if (a.date > b.date) return -1
         return 0
     })
-    const index = posts.map(post => post.id),
-        indexFile = path.join(__dirname, '/index.json')
-    fs.writeFileSync(indexFile, JSON.stringify(index, null, '  '), 'utf-8')
+    const indexFile = path.join(__dirname, '/index.json')
+
+    fs.writeFileSync(indexFile, JSON.stringify(posts, null, '  '), 'utf-8')
+
     console.log(`Index ${indexFile} – build finished`)
 }
 
