@@ -1,0 +1,14 @@
+{
+  "name": "blog-stellar-expert",
+  "version": "1.0.0",
+  "description": "Static blog",
+  "scripts": {
+    "buid-index": "node ./build-index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orbitlens/blog-stellar-expert.git"
+  },
+  "author": "OrbitLens",
+  "dependencies": {}
+}
