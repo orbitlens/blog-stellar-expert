@@ -12,23 +12,23 @@ Bankers are always quite watchful on all aspects concerning numbers rounding dur
 
 This is the story about one small error in the [Stellar](https://stellar.org) Decentralized Exchange matching engine which could lead to the market panic and tradings halt.
 
-#### Chapter 1. Traces
+## Chapter 1. Traces
 
 ![](traces.jpg)
 
 About nine months ago I was working on improvements in [StellarExpert](https://stellar.expert) trades aggregation when I spotted a strange thing. Charts displayed occasional price spikes for some trading pairs, sometimes more than 1000%. My first thought was that those markets lack liquidity, which is a common issue for new assets. However, the same spikes were detected for top assets with tight orderbook. Weird, very-very weird…
 
-When I dug through the database and checked the trading effects, I found that those price deviations were caused by “dust” trades with an extra-small trading amount, like 0.0000001 XLM. So I decided that was just a Horizon rounding error on the effect serialization step because the operations displayed prices close to the current market price and it happened only with extra-small amounts. Therefore all I need to normalize the price history chart was to exclude trades with the amount less than, say, 0.0000100 XLM from the aggregation pipeline.
+When I dug through the database and checked the trading effects, I found that those price deviations were caused by "dust" trades with an extra-small trading amount, like 0.0000001 XLM. So I decided that was just a Horizon rounding error on the effect serialization step because the operations displayed prices close to the current market price and it happened only with extra-small amounts. Therefore all I need to normalize the price history chart was to exclude trades with the amount less than, say, 0.0000100 XLM from the aggregation pipeline.
 
-#### Chapter 2. Suspicions
+## Chapter 2. Suspicions
 
 ![](suspicions.jpg)
 
-Next day I was fiddling with the minimum amount threshold for the trades to be included in the history stats when suddenly I discovered a pattern. “Dust” trades caused trades execution 1:1 despite the assets been trading and the original order price. Summing up accounts balances in the database showed that the trades actually happened at the 1:1 rate. Such behavior resulted in especially impressive OHLC price charts for BTC-anchored assets (NaoBTC, Papaya, VCBear). Fluctuations looked monstrous; candles showed **~99.995%** sudden price drops from the regular market price.
+Next day I was fiddling with the minimum amount threshold for the trades to be included in the history stats when suddenly I discovered a pattern. "Dust" trades caused trades execution 1:1 despite the assets been trading and the original order price. Summing up accounts balances in the database showed that the trades actually happened at the 1:1 rate. Such behavior resulted in especially impressive OHLC price charts for BTC-anchored assets (NaoBTC, Papaya, VCBear). Fluctuations looked monstrous; candles showed **~99.995%** sudden price drops from the regular market price.
 
-That was a bug – moreover, a bug in Stellar Core. So I sat and started composing a bug report for the SDF team. It looked like the rounding has been initially implemented in such fashion to prevent the market from bloating with such “dust leftover” offers.
+That was a bug – moreover, a bug in Stellar Core. So I sat and started composing a bug report for the SDF team. It looked like the rounding has been initially implemented in such fashion to prevent the market from bloating with such "dust leftover" offers.
 
-#### Chapter 3. Threat
+## Chapter 3. Threat
 
 ![](threat.jpg)
 
@@ -45,13 +45,13 @@ increase the potential attacker profit. After thinking for half an hour, I came 
 \- Repeat while there is at least one open offer. Then switch to another asset (BTC issued by another anchor, or, for example, ETH tokens).
 
 The profitability of the attack:   
-_(0.0037–0.0000101) \* 20 \* 90000 =_ **_6641.82 XLM/hour_**
+_(0.0037–0.0000101) \* 20 \* 90000 = **6641.82 XLM/hour**_
 
 About **1,300 USD per hour** considering  the price at the moment of bug discovery. Not so bad, huh? On top of that, regular traders lose the corresponding amount of money minus fees every hour. Using 50 channel accounts instead of 20 could increase the profit of the potential attack up to 16,000 XLM per hour.
 
-The worst thing of all is that the attack could last days even if the malicious activity is detected. You can’t just block an account on the public permissionless blockchain without a consensus of all validators, neither you can “turn off” trades on the decentralized exchange.
+The worst thing of all is that the attack could last days even if the malicious activity is detected. You can’t just block an account on the public permissionless blockchain without a consensus of all validators, neither you can "turn off" trades on the decentralized exchange.
 
-#### Chapter 4. Scrutiny
+## Chapter 4. Scrutiny
 
 ![](scrutiny.jpg)
 
@@ -60,13 +60,13 @@ Once I made the calculations, it came to me that it can be a huge problem if som
 To tell the truth, I was so confused by my findings, that I composed and sent an email directly to Jed. I didn’t create an issue in the bug-tracker to prevent public disclosure. Only much later, I recollected that someone mentioned a dedicated email address for urgent security questions and bug bounty on Stellar Slack. A few minutes digging through the history, and here it is – [security@stellar.org](mailto:security@stellar.org).
 
 The auto-responder said that   
-“You are receiving this message because Stellar.org uses HackerOne to receive security vulnerability reports. Before Stellar.org can review your vulnerability report, you must complete your submission on HackerOne.”
+"You are receiving this message because Stellar.org uses HackerOne to receive security vulnerability reports. Before Stellar.org can review your vulnerability report, you must complete your submission on HackerOne."
 
 Thus I registered on HackerOne and [submitted a report](https://hackerone.com/reports/330105) containing all vulnerability details and attack vector. Bartek commented that they are investigating the report, and Jed earlier responded that they were working on a fix for that. SDF team knew about the problem, so I relaxed and forgot about it.
 
 _However, it wasn’t the end of the story…_
 
-#### Chapter 5. Pursuit
+## Chapter 5. Pursuit
 
 ![](pursuit.jpg)
 
@@ -84,7 +84,7 @@ The next two days I monitored the ledger. Apparently, two more accounts were exp
 
 Too many questions but one thing was clear enough. Now it was just a matter of time when someone else would spot the trades and come to the same сonclusions. Two rival bots competing with each other could completely flood the ledger with such micro trades, resulting not only in the market panic but also in the network congestion.
 
-#### Chapter 6. Clash
+## Chapter 6. Clash
 
 ![](clash.jpg)
 
@@ -96,7 +96,7 @@ Therefore, SDF urged all validators to install a fresh Stellar Core release. No 
 
 Currently, all accounts spotted in abusing the vulnerability are deleted (merged into other accounts).
 
-#### The End
+## The End
 
 ![](end.jpg)
 
