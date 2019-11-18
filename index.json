@@ -1,5 +1,16 @@
 [
   {
+    "title": "StellarExpert – Updates November 2019",
+    "date": "2019-11-18",
+    "id": "stellarexpert-update-november-2019"
+  },
+  {
+    "title": "Centaurus – second layer payment network, exchange, and scaling solution",
+    "date": "2019-09-30",
+    "image": "centaurus256.png",
+    "id": "centaurus-second-layer-payment-network-exchange-and-scaling-solution"
+  },
+  {
     "title": "StellarExpert – Updates August 2019",
     "date": "2019-08-10",
     "id": "stellarexpert-update-august-2019"
@@ -42,5 +53,10 @@
     "title": "StellarExpert – Updates November 2018",
     "date": "2018-11-29",
     "id": "stellarexpert-update-november-2018"
+  },
+  {
+    "title": "StellarExpert – Updates September 2018",
+    "date": "2018-09-27",
+    "id": "stellarexpert-update-september-2018"
   }
 ]
