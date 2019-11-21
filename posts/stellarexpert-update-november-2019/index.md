@@ -132,7 +132,7 @@ And a cherry on a pie. We adopted an awesome identicons standard proposed by
 Lobstr team. It helps visually distinguish various accounts at a glance,
 especially on pages containing multiple operations.
 
-![Account identicons](search-apay.png)
+![Account identicons](identicons-payments.png)
 
 ---
 
