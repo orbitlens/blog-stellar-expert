@@ -16,9 +16,7 @@ countless iterations, tiny triumphs, and epic fails – some of them quite
 expensive in terms of wasted time and efforts. They may substantially simplify
 future navigation through that stormy ocean for other developers. 
 
-*This is the first post in the StellarOpenSourceWeek series (yes, we have plenty
-of materials for at least five more articles, and I promise that you will find
-quite exciting stuff there).*
+_This is the first post in the StellarOpenSourceWeek series (yes, we have plenty of materials for at least five more articles, and I promise that you will find quite exciting stuff there)._
 
 Today I'd like to talk about thresholds matching in multisig transactions and
 accounts... Wait, don't leave! That won't be extremely boring or super
@@ -51,7 +49,7 @@ signature. For instance, you decided to make an escrow payment and invited a
 well-known arbitrator to guarantee your 2-of-3 multisig deal. If you and
 counterparty sign a transaction – everything is ok, the same goes for cases
 you+arbitrator and counterparty+arbitrator. But if you all three sign it,
-the Horizon will return TX_BAD_AUTH_EXTRA error. And that's the simplest smart
+the Horizon will return `TX_BAD_AUTH_EXTRA` error. And that's the simplest smart
 contract I can imagine. Needless to say that multistep transactions involving
 many source accounts may become a nightmare for developers. We've been there. 
 
