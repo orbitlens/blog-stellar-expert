@@ -16,9 +16,9 @@ countless iterations, tiny triumphs, and epic fails – some of them quite
 expensive in terms of wasted time and efforts. They may substantially simplify
 future navigation through that stormy ocean for other developers. 
 
-_This is the first post in the StellarOpenSourceWeek series (yes, we have plenty
+*This is the first post in the StellarOpenSourceWeek series (yes, we have plenty
 of materials for at least five more articles, and I promise that you will find
-quite exciting stuff there)._
+quite exciting stuff there).*
 
 Today I'd like to talk about thresholds matching in multisig transactions and
 accounts... Wait, don't leave! That won't be extremely boring or super
@@ -74,7 +74,7 @@ const schema = await inspectTransactionSigners(tx)
 Step 3. And now just ask the right question.
 
 - Who can sign this transaction?  
-Three singers eligible.
+Three signers eligible.
 
 ```js
 schema.getAllPotentialSigners()
@@ -190,3 +190,5 @@ You can find more use-cases and detailed methods description on the project
 It's an open-source project, feel free to use it in your applications, share
 your ideas, and contribute if you have inspiration.  
 Stay tuned for the next post in a series – we have other exciting things to share.
+
+*Photo credits: [Shiva Smyth](https://www.pexels.com/@shiva-smyth-394854) from Pexels*
