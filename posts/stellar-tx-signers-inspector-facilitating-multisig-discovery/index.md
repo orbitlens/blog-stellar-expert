@@ -114,7 +114,7 @@ schema.checkFeasibility(['GCF...DLP', 'GA0...MMR', 'GBP...D71'])
 ```
 
 - Looks like our CEO is back, do I still need to bother Brian and Ann?  
-No, there signatures are not needed now.
+No, their signatures are not needed now.
 
 ```js
 schema.checkAuthExtra(['GA7...K0M', 'GCF...DLP', 'GA0...MMR'])
@@ -180,13 +180,14 @@ const schema = await inspectTransactionSigners(tx, {accountsInfo: [
 ]})
 ```
 
----
 
+---
  
 You can find more use-cases and detailed methods description on the project
 [page](https://github.com/stellar-expert/stellar-tx-signers-inspector).
 It's an open-source project, feel free to use it in your applications, share
-your ideas, and contribute if you have inspiration.  
+your ideas, and contribute if you have inspiration.
+
 Stay tuned for the next post in a series – we have other exciting things to share.
 
 *Photo credits: [Shiva Smyth](https://www.pexels.com/@shiva-smyth-394854) from Pexels*
