@@ -14,7 +14,7 @@ Strictly speaking, "breathtaking" may sound a little bit exaggerated; let's say
 
 Yeah, you are right, it's just another post about software updates.
 For me, all those changes look exciting because of the countless hours spent
-on the development. Hence I can talk non-stop about the things barely
+on the development. Hence, I can talk non-stop about the things barely
 noticeable for our users. 
 Here is a brief summary of the progress since the previous overview published in
 [November 2019](./stellarexpert-update-november-2019).
@@ -153,7 +153,7 @@ The [protocol changes history](https://stellar.expert/explorer/public/protocol-h
 introduced some time ago had a major flaw. It displayed only those ledgers on
 which protocol bumps occurred, so other important adjustments (like base reserve
 amount or max transactions per ledger changes) were missing there.
-We refactored ingestion engine to store all protocol evolutions.
+We refactored ingestion engine to store all protocol revisions.
 
 ![Protocol versions](protocol-versions-history.png)
 
