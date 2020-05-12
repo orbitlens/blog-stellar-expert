@@ -81,8 +81,8 @@ components. We've published some reusable modules already, and we'll keep
 sharing our codebase with the community. The long-term goal is to make
 StellarExpert fully open-source, piece by piece, module by module.
 
-And finally, here is the list of the most notable new functionality and
-interface changes.
+And finally, here is the list of the most notable interface changes and
+new functionality.
 
 ### Offer details interface
  
@@ -184,7 +184,9 @@ come in handy for wallets and DEX interfaces.
 
 Example:
 
-`GET https://api.stellar.expert/explorer/public/asset/EURT-GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S/rating`
+```
+GET https://api.stellar.expert/explorer/public/asset/EURT-GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S/rating
+```
 
 ```json
 {
