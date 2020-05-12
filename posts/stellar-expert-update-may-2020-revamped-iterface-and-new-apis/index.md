@@ -1,5 +1,5 @@
 ---
-title: StellarExpert Update May 2020 – Revamped Iterface and New APIs
+title: StellarExpert Update May 2020 – Revamped Interface and New APIs
 description: New cards layout, night themes support, offer history interface, operations live stream. 
 date: 2020-05-12
 image: stellar-expert-update-2020.png
