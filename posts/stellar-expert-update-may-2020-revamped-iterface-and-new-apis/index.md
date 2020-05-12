@@ -86,7 +86,7 @@ new functionality.
 
 ### Offer details interface
  
-DEX offers were the only legder entries that looked neglected.
+DEX offers were the only ledger entries that looked neglected.
 From now on, you can check all offer details, trades, and
 modifications history. The data also includes inactive/removed offers that
 cannot be obtained from Horizon API or Core database.
@@ -152,7 +152,7 @@ operation history list.
 The [protocol changes history](https://stellar.expert/explorer/public/protocol-history)
 introduced some time ago had a major flaw. It displayed only those ledgers on
 which protocol bumps occurred, so other important adjustments (like base reserve
-amount or max transactions per legder changes) were missing there.
+amount or max transactions per ledger changes) were missing there.
 We refactored ingestion engine to store all protocol evolutions.
 
 ![Protocol versions](protocol-versions-history.png)
