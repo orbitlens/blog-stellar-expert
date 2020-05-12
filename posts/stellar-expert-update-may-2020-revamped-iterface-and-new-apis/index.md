@@ -140,7 +140,7 @@ during the last month/year which allows assessing account dynamic at a glance.
 
 ### Inline operation memos
 
-It turns out, that some ecosystem projects extensively use transaction `memo`
+It turns out that some ecosystem projects extensively use transaction `memo`
 field to attach extra information to payments and manage offer operations. So
 we followed the advice of Hans from BlueOrion and show memos directly in the
 operation history list.
