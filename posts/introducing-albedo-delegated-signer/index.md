@@ -7,7 +7,7 @@ image: introducing-albedo.png
 
 Two years, five pivotal architecture revisions, hundreds of discussions,
 countless coding hours, plus a secret ingredient - invaluable feedback from
-brilliant Stellar ecosystem and SDF developers.
+brilliant Stellar ecosystem developers and SDF.
 Truly long and bumpy road from the delegated signer prototype
 [published](https://galactictalk.org/d/1192-stellarexpert-id-single-sign-on-app-and-tx-signer-for-stellar-network)
 back in 2018 to the production-ready app.
