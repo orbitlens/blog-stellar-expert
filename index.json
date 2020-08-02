@@ -1,5 +1,11 @@
 [
   {
+    "title": "Introducing Albedo – Stellar delegated signer",
+    "date": "2020-08-02",
+    "image": "introducing-albedo.png",
+    "id": "introducing-albedo-delegated-signer"
+  },
+  {
     "title": "StellarExpert Update May 2020 – Revamped Interface and New APIs",
     "date": "2020-05-12",
     "image": "stellar-expert-update-2020.png",
