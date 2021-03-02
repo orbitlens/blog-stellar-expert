@@ -43,7 +43,7 @@ People can pay tomatoes for carrots and vise versa. Initially, the formula
 gives us a constant product `100*200 = 20,000` which is maintained by the AMM.
 The basic price is 2 carrots for 1 tomato in this example.
 
-Suppose someone wants to buy 2 apples. Since the constant product must remain
+Suppose someone wants to buy 2 tomatoes. Since the constant product must remain
 the same after removing those tomatoes from the pool, the customer will need
 to put 4.08 carrots to balance the pool and additionally 0.2 carrots as trading
 fees. After the trade, our pool contains 98 tomatoes and 204.28 carrots, and the
