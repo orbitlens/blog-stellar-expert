@@ -71,7 +71,7 @@ Our inventory now contains 202.85 carrots and 101 tomatoes.
 We can draw a simple chart that shows the relation between assets price and
 their quantity in the inventory (liquidity pool).
 
-![](price-curve.png)
+![Market price curve](price-curve.png)
 
 One of our farmers decides that it’s time to go home. He withdraws his share of
 the inventory proportionally to his initial investment. However, now the
@@ -198,14 +198,10 @@ the existing DEX orderbook and AMM liquidity pool? Without any doubt,
 such fusion of advantages of both approaches backed by readily available
 compound liquidity provides a truly unique set of features.
 As far as I’m aware, no other blockchain can offer similar functionality at
-the moment.
-
-But suppose we have both the orderbook and pool with some liquidity on the
-protocol level. The aforementioned multiparadigm DEX can be implemented using
+the moment. The aforementioned multiparadigm DEX can be implemented using
 elementary iterative order execution.
 
-
-![](amm+orderbook.png)
+![AMM + orderbook](amm+orderbook.png)
 
 The basic idea behind this algorithm is very simple. When a new (taker) order
 arrives, the DEX engine loads the current state of the liquidity pool for the
