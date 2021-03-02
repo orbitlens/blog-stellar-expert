@@ -1,5 +1,11 @@
 [
   {
+    "title": "Automated Market Makers and Liquidity Pools on Stellar Network",
+    "date": "2021-03-01",
+    "image": "amm-on-stellar.jpg",
+    "id": "automated-market-makers-and-liquidity-pools-on-stellar-network"
+  },
+  {
     "title": "Introducing Albedo – Stellar delegated signer",
     "date": "2020-08-02",
     "image": "introducing-albedo.png",

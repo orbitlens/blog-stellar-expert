@@ -26,3 +26,5 @@ jspm_packages/
 
 # Windows cache
 *Thumbs.db
+
+/unstaged
