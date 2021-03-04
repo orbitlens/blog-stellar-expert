@@ -231,15 +231,15 @@ should execute the following trades:
 
 1. Current AMM price is lower than the best orderbook offer - buy a portion of
    USD tokens from the liquidity pool up to the price 2.02 XLM/USD. Uniswap
-   invariant gives us a quote to _buy 99.26 USD for 199.50 XLM_.
-2. Then we can execute the offer from the orderbook - _buy 15 USD for 30.3 XLM_
+   invariant gives us a quote to buy 99.26 USD for 199.50 XLM.
+2. Then we can execute the offer from the orderbook - buy 15 USD for 30.3 XLM
    at 2.02 XLM/USD.
-3. The next order is at 2.025, so we buy the next portion from AMM - _buy
-   24.58 USD for 49.72 XLM_.
-4. Execute the orderbook offer - _buy 40 USD for 81 XLM at 2.025 XLM/USD_.
-5. Again _buy 24.49 USD for 49.66 XLM_ at 2.03 XLM/USD from AMM.
-6. Execute the rest of the taker order on the orderbook - _buy 96.67 USD for
-   196.24 XLM_ at 2.03 XLM/USD.
+3. The next order is at 2.025, so we buy the next portion from AMM - buy
+   24.58 USD for 49.72 XLM.
+4. Execute the orderbook offer - buy 40 USD for 81 XLM at 2.025 XLM/USD.
+5. Again buy 24.49 USD for 49.66 XLM at 2.03 XLM/USD from AMM.
+6. Execute the rest of the taker order on the orderbook - buy 96.67 USD for
+   196.24 XLM at 2.03 XLM/USD.
 
 The calculated resulting price is 2.0214 XLM/USD. If we execute the same
 300 USD order on the orderbook only, this gives a price of 2.0288 XLM/USD.

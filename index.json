@@ -1,5 +1,11 @@
 [
   {
+    "title": "Multisig Aggregation with Refractor",
+    "date": "2021-03-02",
+    "image": "refractor-bg.jpg",
+    "id": "multisig-aggregation-with-refractor"
+  },
+  {
     "title": "Automated Market Makers and Liquidity Pools on Stellar Network",
     "date": "2021-03-01",
     "image": "amm-on-stellar.jpg",
