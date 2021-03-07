@@ -55,7 +55,7 @@ Two tomatoes will cost 4.26 carrots plus 0.21 carrots in trading fees, and the
 constant sum rises to 20,040.
 This demonstrates an important basic principle – as an asset in the trading pair
 becomes more scarce, our AMM automatically rises its price.
-t the same time, accrued fees increase the size of the pool with each trade.
+At the same time, accrued fees increase the size of the pool with each trade.
 
 The third customer needs carrots. A lot of carrots! He buys 50 carrots for
 30.24 tomatoes + 1.51 in trading fees.
