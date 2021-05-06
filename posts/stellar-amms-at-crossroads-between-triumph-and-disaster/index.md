@@ -32,11 +32,11 @@ committee have really read through the CAP37 draft as the very first question
 about the difference in reserve requirements between CAP37 and CAP38 made no
 sence. In reality, the approaches are identical – `LiquidityStakeEntry` (CAP37)
 or a pool trustline (CAP38) ensures that a pool can't exist without at least one
-base reserve unit locked while the newly created pool itself doesn't belong to
-any account and doesn't consume reserves. After the words about the lack of
-substantial benefits of the interleaved execution and the Communism/Capitalism
-analogy, the complete meaninglessness of all debates in the working group and
-mailing list became obvious as they were entirely overlooked by decision-makers.
+base reserve unit locking, while the pool itself doesn't belong to any account
+and doesn't consume reserves. After the words about the lack of substantial
+benefits of the interleaved execution and the Communism/Capitalism analogy, the
+complete meaninglessness of all debates in the working group and mailing list
+became obvious to me as they were entirely overlooked by decision-makers.
 
 Two key Core developers advocated for the CAP38 approach from the beginning, and
 after two months of consultations the arguments remain essentially the same. Of
