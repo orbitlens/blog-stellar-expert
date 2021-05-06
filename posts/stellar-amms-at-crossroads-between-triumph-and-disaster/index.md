@@ -5,7 +5,7 @@ date: 2021-05-06
 image: amm-crossroads.jpg
 ---
 
-My [previous blog post]((https://stellar.expert/blog/automated-market-makers-and-liquidity-pools-on-stellar-network))
+My [previous blog post](./automated-market-makers-and-liquidity-pools-on-stellar-network)
 about AMMs and liquidity pools on Stellar network has been published two months
 ago, so it's time to follow up on that undoubtedly crucial subject. Despite
 seemingly slow progress, a lot of people have been participating in low-level
@@ -275,9 +275,9 @@ of the proposed pool implementation.
 
 #### Problems of interleaved execution across several pools
 
-As
-shown [here](https://groups.google.com/g/stellar-dev/c/Ofb2KXwzva0/m/YVBKq-3PDAAJ)
-, the complexity of trading against several pools grows linearly with the number
+As shown
+[here](https://groups.google.com/g/stellar-dev/c/Ofb2KXwzva0/m/YVBKq-3PDAAJ),
+the complexity of trading against several pools grows linearly with the number
 of pools. It's not an NP problem, as has been pointed out by skeptics. Of
 course, trade execution across a dozen of pools may be expensive in terms of
 performance, as well as driving much more significant rounding errors. That's
