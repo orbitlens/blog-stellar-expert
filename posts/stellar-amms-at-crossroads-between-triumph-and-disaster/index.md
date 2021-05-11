@@ -1,8 +1,7 @@
 ---
-title: Stellar AMMs – at Crossroads Between Triumph and Disaster
-description: Comparison of CAP37 and CAP38 approaches to building liquidity pools on Stellar
-date: 2021-05-06
-image: amm-crossroads.jpg
+title: Stellar AMMs – at Crossroads Between Triumph and Disaster description:
+Comparison of CAP37 and CAP38 approaches to building liquidity pools on Stellar
+date: 2021-05-06 image: amm-crossroads.jpg
 ---
 
 My [previous blog post](./automated-market-makers-and-liquidity-pools-on-stellar-network)
@@ -193,15 +192,8 @@ claiming that each technology will be used only in specific cases.
 
 #### "Interleaved execution is a premature optimization, and can be done later"
 
-This seems like a reasonable argument at the first glance. But once we introduce
-the way to trade directly against the pool, we'll need to maintain backward
-compatibility in future releases because of the pre-signed transactions and
-client applications that may rely on said logic. And having an ordebrook and
-several pools with imbalanced equilibrium prices completely eliminates most of
-the proposal benefits, at the same time introducing arbitrage opportunities.
-Also, "can be done later" doesn't hint at any specific date. Writing a CAP,
-gathering consensus around it, implementing changes in Core, Horizon, and SDKs
-takes months, and sometimes even years.
+Writing a CAP, gathering consensus around it, implementing changes in Core,
+Horizon, and SDKs takes months, and sometimes even years.
 
 Meanwhile, the opposite approach is fairly straightforward. The interleaved
 orderbook+pool execution can be turned off in the future without breaking
