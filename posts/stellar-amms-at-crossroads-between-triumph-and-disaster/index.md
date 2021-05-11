@@ -125,45 +125,7 @@ and geeks, or maybe we should target the mass market, lowering the overall
 complexity by reducing the number of options and spawning new pool types only
 when it's absolutely necessary?
 
-_Case 5._ On top of all that, a nefarious liquidity provider can spoof prices
-forcing a victim to exchange an asset at a worse rate. Let's imagine that a
-malicious actor controls 80% of liquidity in the third pool (4K USDC and 8K XLM)
-. In our case, it's a StableSwap pool with the lowest yield for trades around
-the equilibrium point, so it would be natural to presume that other liquidity
-providers will prefer to deposit their funds to any of the two remaining pools,
-with a higher yield. It's possible to create an automated bot that monitors
-transactions mempool and submits a WidthdrawPoolLiquidityOp reducing the pool
-liquidity by, say, 50% if anyone tries to swap against this pool a significant
-amount of funds without a strict price limit. In case if the front-running is
-successful (the withdrawal operation is included before the original swap
-request, which has a relatively high statistical probability – up to 50% under
-normal conditions), the effective exchange rate may be much worse than
-originally expected (even by orders of magnitude).
-
-For example, if a user tries to buy 1K USDC from that pool, successful
-front-running will lead to an USDC exchange price increase by up to 30%
-depending on the pool parameters because of the reduced liquidity. After the
-arbitrage with other pools, an attacker capitalizes gains and re-deposits the
-previously withdrawn liquidity back to the pool, waiting for the next victim.
-Users (or, I'd better say, price quoting algorithms in their wallets) will tend
-to choose the pool with the lowest fee and the best exchange rate, so naturally,
-the third pool will be almost always chosen for relatively small trade amounts.
-An attack can be repeated indefinitely, almost risk-free, and quite tricky to
-prevent – user's wallet must have a very advanced quoting algorithm with access
-to historical trades feed. In the worst-case scenario, an attacker capitalizes
-only minuscule trading fees and carries impairment loss risks, making the scheme
-very attractive in terms of risk/reward opportunity. Thanks to Stellar almost
-non-existent transaction fees, it will be profitable even on very small trades.
-
-Most of the potential attack vectors discussed in the workgroup rely on pool
-price spoofing. If the pool price can be pushed independently of other pools and
-the orderbook for a given trading pair (which is the case here), it simplifies
-price manipulations. An attacker may control only one pool, and it will be
-enough. With CAP37 proposal, the manipulation options are fairly limited – the
-same front-running attack can be executed only if an attacker controls almost
-the entire on-chain liquidity for a given trading pair.
-
-### Closer look at the Arbitrage Problem
+### Closer Look at the Arbitrage Problem
 
 Since several bots compete for the same prize, the only viable strategy here is
 to submit a huge number of simultaneous transactions with crunked-up transaction
