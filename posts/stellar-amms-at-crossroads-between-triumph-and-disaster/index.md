@@ -1,7 +1,8 @@
 ---
-title: Stellar AMMs – at Crossroads Between Triumph and Disaster description:
-Comparison of CAP37 and CAP38 approaches to building liquidity pools on Stellar
-date: 2021-05-06 image: amm-crossroads.jpg
+title: Stellar AMMs – at Crossroads Between Triumph and Disaster
+description: Comparison of CAP37 and CAP38 approaches to building liquidity pools on Stellar
+date: 2021-05-06
+image: amm-crossroads.jpg
 ---
 
 My [previous blog post](./automated-market-makers-and-liquidity-pools-on-stellar-network)
