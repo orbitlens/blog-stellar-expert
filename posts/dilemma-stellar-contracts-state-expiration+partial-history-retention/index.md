@@ -2,7 +2,7 @@
 title: Dilemma of Stellar contracts state expiration + partial history retention
 description: Comparison of CAP37 and CAP38 approaches to building liquidity pools on Stellar
 date: 2023-09-19
-image: partial-history-retention+state-expiration.png
+image: partial-history-retention-state-expiration.png
 ---
 
 > This blogpost represents a simplified and trimmed analysis covering some problems of technical decisions embraced by SDF developers. 
@@ -16,7 +16,7 @@ the current Stellar blockchain state and transactions history. SDF developers pr
 a while ago to address the problem of the overblown database size, which grows exponentially with time.
 Basically, the idea is to discard old transaction history and provide access to only recent history entries.
 
-[State expiration](https://soroban.stellar.org/docs/fundamentals-and-concepts/state-expiration) is a concept that was born with the
+[State Expiration](https://soroban.stellar.org/docs/fundamentals-and-concepts/state-expiration) is a concept that was born with the
 Soroban smart contracts engine. In a nutshell, it means that all data entries written by the smart contracts will eventually expire,
 and will be removed from the blockchain unless someone periodically "bumps" this record by paying additional fee for data retention
 on-chain.
@@ -66,7 +66,7 @@ With a slightly modified approach, state expiration might be quite beneficial fo
 
 ![state-expiration-porposal.png](state-expiration-porposal.png)
 
-Creating permanent state entry should cost more than writing to the temporary storage, e.g. 1XLM + fee proportional to the stored data size.
+Creating permanent state entry should cost more than writing to the temporary storage, e.g. 1 XLM + fee proportional to the stored data size.
 To balance very expensive entries creation, updates to these permanent state entries should be less expensive since the user has already
 paid for the persistent state slot reservation. On the other hand, fees charged upon creation of temporary storage entry might be much
 lower, proportional to the desired lifetime of this entry. In this case, there’s no need for any additional operations and the very concept
@@ -76,13 +76,13 @@ temporary entries whenever possible.
 ### Optimize binary data storage and indexing strategy
 
 Fully-ingested Horizon history database has such tremendous size mainly because of the suboptimal storage strategy. It contains a lot of
-duplicate information. In fact, effects, operations, and transaction details can be retrieved from the raw transaction XDR. There is no need
-to save all this data, only raw transaction data (envelope, result, and meta XDR entries) plus the index containing search associations (
-accounts, assets, offers that were modified by a given transaction) is required.
+duplicate information. In fact, `effects`, `operations`, and `transaction` details can be retrieved from the raw transaction XDR. There is no need
+to save all this data, only raw transaction data is required (envelope, result, and meta XDR entries) plus the index containing search 
+associations (accounts, assets, offers that were modified by a given transaction).
 
 Everything else can be reconstructed from the raw XDR on the fly in response to the API request. This essentially means about 60%+ size
 reduction for the Horizon database. Further on, the data can be compressed. For example, binary XDR data stored in the StellarCore database
-as Base64-encoded text, which consumes at least 33% more space than raw binary data. Adopting a performant compression algorithm can reduce
+as `Base64`-encoded text, which consumes at least 33% more space than raw binary data. Adopting a performant compression algorithm can reduce
 it by another 40-80% depending on particular transaction contents and modifications being made to the ledger state.
 
 ![indexed-history.png](indexed-history.png)
@@ -94,20 +94,20 @@ Thus, it has lower hardware requirements and generates much less read/write IO.
 ### Adopt better state warehousing approach
 
 Current Stellar Core database storage format presents a major performance bottleneck for contract state warehousing.  not to mention that the implementation itself is
-inefficient because it has about 3x overhead over the actual record size. In the "contractdata" table LedgerEntry, Contract ID, and
-state record key itself all stored in Base64 format, while the serialized LedgerEntry XDR contains all other fields.
+inefficient because it has about 3x overhead over the actual record size. In the `contractdata` table, LedgerEntry, Contract ID, and
+state record key itself all stored in `Base64` format, while the serialized LedgerEntry XDR contains all other fields.
 
 ![state-storage-overhead.jpg](state-storage-overhead.jpg)
 
-If we are talking about PostgreSQL, bytea binary column data format is much more suitable for this. Contract id, state key, and type can be
-stored in a single column with 64 bytes length as [contract_id][sha256hash(key, type)]. This is a more efficient way to save and query data
+If we are talking about PostgreSQL, `bytea` binary column data format is much more suitable for this. Contract id, state key, and type can be
+stored in a single column with 64 bytes length as `[contract_id][sha256hash(key, type)]`. This is a more efficient way to save and query data
 because it allows to select records based on the prefixed search (ability to query all records for a given contract id using standard SQL
-operators) while maintaining a predictable column and index size under any circumstances. All other data from the ledgerentry column (body,
-last modified) can be stored either as separate columns or in a serialized binary structure, which can be also stored in the bytea format
+operators) while maintaining a predictable column and index size under any circumstances. All other data from the `ledgerentry` column (`body`,
+`lastModified`) can be stored either as separate columns or in a serialized binary structure, which can be also stored in the bytea format
 with compression. Smaller size of data and indexes means higher throughput for transactions and more relaxed hardware requirements for
 validators.
 
-### Look for better database options
+### Look for other database options
 
 From a broader perspective, PostgreSQL itself is not very well suited for blockchains. For good reason many other blockchain projects rely
 on highly optimized in-process database engines like LevelDB and RocksDB. Both provide very high IO throughput, have built-in versatile
@@ -115,12 +115,12 @@ indexing strategies, and allow efficient Merkle hashing. "In-process" part is cr
 all inter-process communication between DB engine and Stellar Core processes, data serialization/deserialization, SQL parsing, connections
 management, and auxiliary background DB maintenance processes.
 
-![databases-for-state-storage.png](databases-for-state-storage.png)
+![](databases-for-state-storage.png)
 ([research link](https://www.researchgate.net/publication/342941591_A_Brief_Review_of_Database_Solutions_Used_within_Blockchain_Platforms))
 
 Stellar also slowly drifts in this direction with the LevelDB-based solution for buckets data presented last year. A logical next step would
 be to store operational ledger state as well as history in the same BucketsDB, achieving data deduplication of entries (PostgreSQL DB stores
-entries state which is also stored in buckets). This step will not only save space, but also hugely increase read/write performance,
+entries state which is also written into buckets). This step will not only save space, but also hugely increase read/write performance,
 eliminating current bottlenecks.
 
 ### Prioritizing long-term goals
