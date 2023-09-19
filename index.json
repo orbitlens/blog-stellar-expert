@@ -1,5 +1,11 @@
 [
   {
+    "title": "Dilemma of Stellar contracts state expiration + partial history retention",
+    "date": "2023-09-19",
+    "image": "partial-history-retention+state-expiration.png",
+    "id": "dilemma-stellar-contracts-state-expiration+partial-history-retention"
+  },
+  {
     "title": "Stellar AMMs – at Crossroads Between Triumph and Disaster",
     "date": "2021-05-06",
     "image": "amm-crossroads.jpg",
