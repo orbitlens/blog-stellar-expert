@@ -1,5 +1,11 @@
 [
   {
+    "title": "Radically shrinking Soroban smart contract memory allocation",
+    "date": "2026-10-31",
+    "image": "sponge.jpg",
+    "id": "wasm-stack-estimator"
+  },
+  {
     "title": "Dilemma of Stellar contracts state expiration + partial history retention",
     "date": "2023-09-19",
     "image": "partial-history-retention-state-expiration.png",
