@@ -9,8 +9,10 @@ Open a Stellar wallet or your exchange account, choose any transaction, tap "vie
 on StellarExpert. For nine years we've been turning the raw ledger into pages anyone can read, from a
 first-time user checking a payment to a seasoned developer debugging a smart contract.
 
-All this data is backed by API. Starting today that API is open to everyone as a subscription. With StellarExpert you will
-have entire ledger at your fingertips – processed, stored, indexed, aggregated, and enriched. The same indexed data that
+All this data is backed by API. Starting today that API is open to everyone as a subscription. With StellarExpert you
+will
+have the entire ledger at your fingertips – processed, stored, indexed, aggregated, and enriched. The same indexed data
+that
 powers our explorer, now available for your own product.
 
 ## How we got here
@@ -25,7 +27,7 @@ every two years. Today our infrastructure serves several million requests daily.
 ![2.67M requests daily on average](user-traffic.png)
 
 Along the way, StellarExpert became part of the ecosystem's daily routine. Most wallets and exchanges link to it as
-their default explorer, and our public directory of known accounts and scam-domain blocklist helps protect users from
+their default explorer, and our public directory of known accounts and scam-domain blocklist help protect users from
 bad actors.
 
 ## Why subscriptions
@@ -37,19 +39,19 @@ can keep up forever.
 Subscriptions put that work on a sustainable footing. They also let us treat the API as a product in its own right:
 documented, metered and supported, rather than a by-product of the explorer.
 
-Of course, anybody can spin up an indexer or build a custom one. There is a publicly available toolkit that allows you
-to work with historical data. But then you need to maintain it, pay for CPU and storage, keep all of it working through
-every protocol upgrade. And what if the server with all the data suddenly dies, do you have a spare? That is a permanent
-engineering and infrastructure cost. With StellarExpert it is as simple as it can be. Just build your app and we’ll take
-care of the ledger data.
+Without any doubt, anybody can spin up an indexer or build a custom one. There is a publicly available toolkit that
+allows you to work with historical data. But then you need to maintain it, pay for CPU, storage, and keep all of it
+working through every protocol upgrade. And what if the server with all the data suddenly dies? Do you have a spare?
+That is a permanent engineering and infrastructure cost. With StellarExpert it is as simple as it can be. Just build
+your app and we'll take care of the ledger data.
 
 ![You don't need to build or run an indexer](indexer-vs-api.png)
 
 ## What you get
 
 Originally, we built this API for ourselves, and lately we've been polishing it for other developers. Every endpoint has
-the OpenAPI specification, and the docs feature a playground to try requests live.
-Responses follow the familiar Horizon list format, so Stellar ecosystem developers should feel themselves at home.
+an OpenAPI specification, and the docs feature a playground to try requests live.
+Responses follow the familiar Horizon list format, so Stellar ecosystem developers should feel at home.
 
 We have a data endpoint for every use case, all available with one API key. Whatever the explorer shows, the API can
 deliver to you, plus some extra data not available in the interface.
@@ -62,7 +64,7 @@ default. With StellarExpert you can query any account, asset or market at any po
 
 ### X-ray vision for contracts
 
-For smart contract developers, our API offers a genuine X-ray vision.
+For smart contract developers, our API offers genuine X-ray vision.
 
 - Live contract state, including temporary entries and entries that have already been archived, with their TTLs
 - The complete indexed event history with full-text search on event topics
@@ -84,10 +86,10 @@ All API keys and origins on an account share one compute-unit balance and one se
 Of course, we didn't forget about our AI friends either. Agents can use the API with no account or key, paying per
 request over the open [x402](https://github.com/coinbase/x402) protocol. The payment itself authorizes the request.
 
-![x402 pay-par-request flow](x402.png)
+![x402 pay-per-request flow](x402.png)
 
 Point your agent at our OpenAPI docs and it can work out which
-endpoint it needs. Accounts that have used up their compute credits can pay for single calls the same way.
+endpoint it needs. Accounts that have used up their compute units can pay for single calls the same way.
 
 ### Proven track record
 
@@ -97,8 +99,8 @@ StellarExpert has run in production for nine years, and the whole ecosystem test
 - High availability: independent servers in a failover configuration keep every data layer available
 - Fast delivery: API responses are cached at the edge, static files are served from a CDN
 
-Privacy is important, your call history shouldn't be someone's dataset. We don't process personal data and don't store
-your exact requests history.
+Privacy matters: your call history shouldn’t be someone else’s dataset. We don’t process personal data or store your
+exact request history.
 
 ### Subscription plans
 
@@ -108,7 +110,7 @@ support and licensable data.
 
 ![Subscription pricing](susbcription-plans.png)
 
-Yearly billing saves up to 30%. Prices include taxes already, and you can pay by card, PayPal, Apple Pay or Google Pay.
+Yearly billing saves up to 30%. Prices already include taxes, and you can pay by card, PayPal, Apple Pay or Google Pay.
 Check current plans on the [pricing page](https://stellar.expert/pricing).
 
 Each paid endpoint has a price in compute units that depends on how much work the query does, and every paid operation
@@ -120,9 +122,9 @@ Testnet keep working.
 
 ## What stays free
 
-Only starting building on Stellar? We've got your back — all available API endpoints for Testnet data are free!
-With or without an API key. Anonymous requests to Testnet and other free endpoints are limited to 30 per minute.
-If you need a higher throughput, register an account to increase rate limits with your API subscription.
+Just starting to build on Stellar? We've got your back — all available API endpoints for Testnet data are free,
+with or without an API key. Anonymous requests to Testnet and other free endpoints are limited to 30 per minute.
+Need higher throughput? Register an account to increase rate limits with your API subscription.
 
 On Mainnet, endpoints marked **Free** in the [API reference](https://stellar.expert/api-docs) stay open to everyone,
 with no plan limitations on page size. Today that list covers:
@@ -137,18 +139,18 @@ Every other `GET` endpoint for Mainnet data is paid.
 
 ## Key dates
 
-- **November 5, 2026 (today):** subscriptions live. Pick a plan on the [pricing page](https://stellar.expert/pricing)
+- **November 5, 2026 (today):** subscriptions go live. Pick a plan on the [pricing page](https://stellar.expert/pricing)
   and create an API key if you want to use our data in your application.
 - **November 6, 2026, 15:00 UTC:** anonymous access ends. A paid endpoint called without a valid API key or registered
   origin responds `402 Payment Required`. Free endpoints and Testnet will keep working as before.
 
-If your app, bot or backend calls `api.stellar.expert` without a key, you have time to add one. 
+If your app, bot or backend calls `api.stellar.expert` without a key, you have time to add one.
 Testnet stays free, and so does browsing the stellar.expert explorer.
 
 ## Migrating your integration
 
-Integrations that only call Testnet need no API key. For using paid data, just pass the `Authorization: Bearer <key>`
-header.
+Integrations that only call Testnet need no API key. To access paid data, pass your key in the
+`Authorization: Bearer <key>` header.
 
 ```bash
 curl -H "Authorization: Bearer $STELLAR_EXPERT_API_KEY" \
