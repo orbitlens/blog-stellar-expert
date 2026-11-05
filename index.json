@@ -1,5 +1,11 @@
 [
   {
+    "title": "Data party! StellarExpert API subscriptions are live!",
+    "date": "2026-10-31",
+    "image": "api-subscriptions-hero.png",
+    "id": "stellarexpert-api-subscriptions-launch"
+  },
+  {
     "title": "Radically shrinking Soroban smart contract memory allocation",
     "date": "2026-10-31",
     "image": "sponge.jpg",
