@@ -1,7 +1,7 @@
 ---
 title: Data party! StellarExpert API subscriptions are live!
 description: StellarExpert API subscriptions are live! One API key to access all Stellar data!
-date: 2026-10-31
+date: 2026-11-05
 image: api-subscriptions-hero.png
 ---
 
